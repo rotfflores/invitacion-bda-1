@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111111">
-  <title>Panel privado · Jocelyn & Jansen</title>
+  <title>Panel privado · Sheccid & Caleb</title>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
   <style>
@@ -15,7 +15,7 @@
 <body>
   <main class="wrap">
     <section id="login-view" class="login">
-      <div class="eyebrow">Jocelyn & Jansen</div>
+      <div class="eyebrow">Sheccid & Caleb</div>
       <h1>Panel privado</h1>
       <p>Consulta las confirmaciones y mensajes de la boda en tiempo real.</p>
       <form id="login-form">
@@ -27,11 +27,11 @@
       </form>
     </section>
     <section id="recovery-view" class="login" hidden>
-      <div class="eyebrow">Jocelyn & Jansen</div><h1>Crea tu contraseña</h1><p>Elige una contraseña para tus próximos accesos al panel.</p>
+      <div class="eyebrow">Sheccid & Caleb</div><h1>Crea tu contraseña</h1><p>Elige una contraseña para tus próximos accesos al panel.</p>
       <form id="recovery-form"><label for="new-password">Nueva contraseña</label><input id="new-password" type="password" minlength="8" autocomplete="new-password" required><button type="submit">Guardar contraseña</button><div id="recovery-error" class="error" aria-live="polite"></div></form>
     </section>
     <section id="dashboard-view" hidden>
-      <div class="head"><div><div class="eyebrow">Jocelyn & Jansen · acceso privado</div><h1>Confirmaciones</h1><p>La lista se actualiza automáticamente cada 15 segundos.</p></div><button id="logout" class="secondary">Cerrar sesión</button></div>
+      <div class="head"><div><div class="eyebrow">Sheccid & Caleb · acceso privado</div><h1>Confirmaciones</h1><p>La lista se actualiza automáticamente cada 15 segundos.</p></div><button id="logout" class="secondary">Cerrar sesión</button></div>
       <section class="create"><div class="eyebrow">Nueva invitación</div><h2>Crear enlace</h2><form id="create-form"><div><label for="invite-name">Familia o titular</label><input id="invite-name" required placeholder="Ej. Familia García López"></div><div><label for="invite-passes">Pases</label><input id="invite-passes" type="number" min="1" max="15" value="2" required></div><button type="submit">Crear invitación</button></form><p id="created-link" class="created" aria-live="polite"></p></section>
       <div class="summary"><article class="stat"><b id="total">0</b><span>Respuestas recibidas</span></article><article class="stat"><b id="attending">0</b><span>Personas que asistirán</span></article><article class="stat"><b id="declined">0</b><span>Invitaciones que no asistirán</span></article></div>
       <div class="table-wrap"><table><thead><tr><th>Familia</th><th>Asistencia</th><th>Invitados</th><th>Mensaje</th><th>Confirmó</th></tr></thead><tbody id="rows"></tbody></table></div>
@@ -81,7 +81,7 @@
           }
           const safeName=name.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/gi,'-').replace(/(^-|-$)/g,'')||'invitacion';
           const blob=new Blob([await pdf.save()],{type:'application/pdf'}),downloadUrl=URL.createObjectURL(blob),link=document.createElement('a');
-          link.href=downloadUrl;link.download=`Invitacion-Jocelyn-Jansen-${safeName}.pdf`;document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(downloadUrl);
+          link.href=downloadUrl;link.download=`Invitacion-Sheccid-Caleb-${safeName}.pdf`;document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(downloadUrl);
         }catch(error){console.error('PDF personalizado:',error);alert('No fue posible preparar el PDF. Intenta de nuevo.');}
         finally{button.disabled=false;button.textContent=originalLabel;}
       };
